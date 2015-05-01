@@ -1,0 +1,7 @@
+Start: Web, 29 Apr 2015 20:10:00 -0500 
+End: Wed, 29 Apr 2015 21:53:09 -0500 
+Tasks: Initial commit. Started to dig into the materials and worked on the design.
+
+Start: Thu, 30 Apr 2015 20:05:15 -0500
+End: Fri, 01 May 2015 00:05:09 -0500 
+Tasks: Working on the multtable.php piece. Going through step-by-step based on the design and added code to validate the inputs, calculate the results and display the result back to the page. Everything is working for this page.
