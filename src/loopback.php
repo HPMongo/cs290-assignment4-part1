@@ -2,7 +2,7 @@
 error_reporting(E_ALL);
 ini_set('display_errors','On');
 ?>
-<DOC <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 	<title>Loopback</title>
@@ -10,24 +10,34 @@ ini_set('display_errors','On');
 <body>
 <?php
 	$jsonArr = array();
+	$parmArr = array();
 	if($_SERVER['REQUEST_METHOD']  === 'POST') {
 		$jsonArr['Type']= $_SERVER['REQUEST_METHOD'];
 		foreach ($_POST as $key => $value) {
 			if(!empty($value)) {
-				$jsonArr[$key] = $value;
+				$parmArr[$key] = $value;
 			} else {
-				$jsonArr[$key] = null;
+				$parmArr[$key] = null;
 			}
 		}
-		echo json_encode($jsonArr);
+		if(!empty($parmArr)) {
+			$jsonArr['parameters'] = $parmArr;
+		} else {
+			$jsonArr['parameters'] = null;
+		}		echo json_encode($jsonArr);
 	} elseif ($_SERVER['REQUEST_METHOD'] === 'GET') {
 		$jsonArr['Type']= $_SERVER['REQUEST_METHOD'];
 		foreach ($_GET as $key => $value) {
 			if(!empty($value)) {
-				$jsonArr[$key] = $value;
+				$parmArr[$key] = $value;
 			} else {
-				$jsonArr[$key] = null;
+				$parmArr[$key] = null;
 			}
+		}
+		if(!empty($parmArr)) {
+			$jsonArr['parameters'] = $parmArr;
+		} else {
+			$jsonArr['parameters'] = null;
 		}
 		echo json_encode($jsonArr);
 	} else {
