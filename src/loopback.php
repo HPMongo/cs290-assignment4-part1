@@ -2,31 +2,37 @@
 error_reporting(E_ALL);
 ini_set('display_errors','On');
 ?>
-<!DOCTYPE html>
+<DOC <!DOCTYPE html>
 <html>
 <head>
 	<title>Loopback</title>
 </head>
 <body>
 <?php
-	$json;
-	echo $_SERVER['SERVER_NAME']."<br>";
-	echo $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"."<br>";
-	echo "$_SERVER[REQUEST_URI]"."<br>";
+	$jsonArr = array();
 	if($_SERVER['REQUEST_METHOD']  === 'POST') {
-		echo "POST here!"."<br>";
-		$json = file_get_contents("$_SERVER[REQUEST_URI]");
-		$obj = $json_decode($json);
-		echo $ojb;
+		$jsonArr['Type']= $_SERVER['REQUEST_METHOD'];
+		foreach ($_POST as $key => $value) {
+			if(!empty($value)) {
+				$jsonArr[$key] = $value;
+			} else {
+				$jsonArr[$key] = null;
+			}
+		}
+		echo json_encode($jsonArr);
 	} elseif ($_SERVER['REQUEST_METHOD'] === 'GET') {
-		echo "GET here!"."<br>";
-		$json = file_get_contents("http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]");
-		$obj = json_decode($json);
-		echo $obj;
+		$jsonArr['Type']= $_SERVER['REQUEST_METHOD'];
+		foreach ($_GET as $key => $value) {
+			if(!empty($value)) {
+				$jsonArr[$key] = $value;
+			} else {
+				$jsonArr[$key] = null;
+			}
+		}
+		echo json_encode($jsonArr);
 	} else {
-		echo "WHAT???";
+		echo "Missing a valid request method (GET or POST)";
 	}
-
 ?>
 </body>
 </html>
