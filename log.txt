@@ -14,3 +14,6 @@ Start: Sun, 3 May 2015 14:30:00 -0500
 End: Sun, 3 May 2015 16:47:56 -0500 
 Tasks: During this time, I added links between content1.php and content2.php. I was also able to fix the redirect and logon issue by created a logout.php page to clear out the session information. All of the session information is set on content1.php once the user logs on successfully. This enables the user to go back to the pages without having to log back on (assuming that the user has not logged out).
 
+Start: Sun, 3 May 2015 17:01:00 -0500 
+End: Sun, 3 May 2015 17:45:48 -0500 
+Tasks: Add ob_start() and ob_end_clean() to override header information when headers have been sent already. I encountered this error on OSU's server and not the local machine. The fix works in both environment.
