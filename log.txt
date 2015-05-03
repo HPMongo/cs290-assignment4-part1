@@ -9,3 +9,8 @@ Tasks: Working on the multtable.php piece. Going through step-by-step based on t
 Start: Sat, 02 May 2015 12:05:15 -0500
 End: Sat, 02 May 2015 19:16:00 -0500 
 Tasks: Completed loopback.php. Started to work on the last part of the assignment. login.php and content1.php works correctly. content2 is created. Need to add links between content1 and content2 as well as how the page should work when the user logs in versus not log in.
+
+Start: Sun, 3 May 2015 14:30:00 -0500
+End: Sun, 3 May 2015 16:47:56 -0500 
+Tasks: During this time, I added links between content1.php and content2.php. I was also able to fix the redirect and logon issue by created a logout.php page to clear out the session information. All of the session information is set on content1.php once the user logs on successfully. This enables the user to go back to the pages without having to log back on (assuming that the user has not logged out).
+
