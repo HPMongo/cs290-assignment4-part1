@@ -5,3 +5,7 @@ Tasks: Initial commit. Started to dig into the materials and worked on the desig
 Start: Thu, 30 Apr 2015 20:05:15 -0500
 End: Fri, 01 May 2015 00:05:09 -0500 
 Tasks: Working on the multtable.php piece. Going through step-by-step based on the design and added code to validate the inputs, calculate the results and display the result back to the page. Everything is working for this page.
+
+Start: Sat, 02 May 2015 12:05:15 -0500
+End: Sat, 02 May 2015 19:16:00 -0500 
+Tasks: Completed loopback.php. Started to work on the last part of the assignment. login.php and content1.php works correctly. content2 is created. Need to add links between content1 and content2 as well as how the page should work when the user logs in versus not log in.
