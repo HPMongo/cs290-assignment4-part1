@@ -8,15 +8,17 @@ session_start();
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Content1</title>
+	<title>Content2</title>
 </head>
 <body>
 <?php
-	if (!(isset($_SESSION['validLogin'])) || $_SESSION['validLogin'] = '') {
-		header('Location: http://localhost/assignment4/cs290-assignment4-part1/src/login.php');
+	if ($_SESSION['validLogin'] === 'Yes') {
+		echo "Your lucky number is: ";
+		echo rand(0, 999)."<br>";
+		echo "Click <a href='content1.php'>here</a> to go back to previous page";
+		echo " or click <a href='logout.php'>here</a> to log out.";
 	} else {
-		echo "You passed the test!";
-		//header('Location: http://localhost/assignment4/cs290-assignment4-part1/src/login.php');
+		header('Location: login.php');
 	}
 ?>
 </body>
